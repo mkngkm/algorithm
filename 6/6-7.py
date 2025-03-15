@@ -7,11 +7,10 @@ def DFS(L, sum):
     global res
     if L > res: # 최소개수보다 넘어갈 경우 가지치기
         return
+    if sum > m: # 거슬러 줄 금액을 넘었을 경우 가지치기
+        return
     if sum == m: # 거슬러 줄 금액에 도달했을 경우 멈춤
         res = L
-        return
-    elif sum > m: # 거슬러 줄 금액을 넘었을 경우 가지치기
-        return
     else: # 아직 거슬러줄 금액에 도달하지 못했을 경우
         for c in coin:
             DFS(L+1, sum + c)
