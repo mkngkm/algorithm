@@ -29,4 +29,12 @@ if __name__=="__main__":
         b[i] = b[i-1] * (n - i) // i
     DFS(0, 0)
         
+        
+# # 파이썬 순열 이용
+# import itertools as it
+
+# for tmp in it.permutations(n, f):
+#     sum = 0
+#     for L, x in enumerate(tmp): # 인덱스, 값
+#         sum += b[L] * x
     
