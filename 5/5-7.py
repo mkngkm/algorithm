@@ -10,24 +10,24 @@
 from collections import deque
 
 # 필수 과목 순서
-basic = list(input())
+basic = input()
 n = int(input())
-res = ["YES"] * n
+#res = ["YES"] * n
 
 for i in range(n):
     dq = deque(basic)
-    ex = list(input())
+    ex = input()
     for e in ex:
-        if dq:
-            if e == dq[0]:
-                dq.popleft()
+        if e in dq:
+            if e != dq.popleft():
+                print("#%d NO" %(i+1))
+                break
+    else: # 전부 다 돌고 break 문에 안걸렸을때
+        if len(dq) == 0:
+            print("#%d YES" %(i+1))
         else:
-            break
-    if dq:
-        res[i] = "NO"
-
-for r in res:
-    print(r)
+            print("#%d NO" %(i+1))
+        
             
                 
             
