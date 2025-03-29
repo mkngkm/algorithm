@@ -8,22 +8,17 @@
 from collections import Counter
 
 n = int(input())
-
 words = Counter()
 
-# 노트에 적힌 단어 개수 세기
 for i in range(n):
     key = input()
     words[key] += 1  
+    #그냥 = 1
 
-# 시에 등장한 단어 개수 감소
 for j in range(n - 1):
     note = input()
     words[note] -= 1
+    # 그냥 = 0 해도 상관 x 넘 복잡하게 생각 x
     if words[note] == 0:
         del words[note]
-
-# 남은 한 개의 단어 출력
-print(*words.keys())  
-
-
+print(*words.keys())
