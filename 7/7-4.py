@@ -14,7 +14,7 @@ def dfs(L, sum):
             cnt += 1
     else:
         for i in range(n[L]+1): # 해당 동전 금액이 포함이 안된경우부터 다 쓴 경우까지 카운트
-            dfs(L+1, sum + p[L] * i)
+            dfs(L+1, sum + (p[L] * i))
 
 if __name__=="__main__":
     t = int(input())
