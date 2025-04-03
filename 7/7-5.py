@@ -14,18 +14,34 @@ def dfs(L, sumA, sumB, sumC):
     if L == n:
         if sumA > 0 and sumB > 0 and sumC > 0:
             if sumA != sumB and sumB != sumC and sumC != sumA:
-                res = min(res, max(sumA, sumB, sumC) - min(sumA, sumB, sumC))                     
+                res = min(res, max(sumA, sumB, sumC) - min(sumA, sumB, sumC))
+            # cha = max(money) - min(money)
+            # if cha < res:
+            #   tmp = set()
+            #   for x in money:
+            #       tmp.add(x)
+            #   if len(tmp) == 3:
+            #       res = cha                                
     else:
         dfs(L+1, sumA + coin[L], sumB, sumC)
         dfs(L+1, sumA, sumB + coin[L], sumC)
         dfs(L+1, sumA, sumB, sumC + coin[L])
+        # for i in range(3):
+            # money[i] += coin[L]
+            # DFS(L+1)
+            # money[i] -= coin[L]
         
 if __name__=="__main__":
     n = int(input())
     coin = list()
+    # money = [0] * 3
     for _ in range(n):
         coin.append(int(input()))
     res = 21740000000
     answ = []
     dfs(0, 0, 0, 0)
     print(res)
+    
+    
+    #sum A, B, C 를 배열로 관리 
+    # 중복을 set으로 처리. 
