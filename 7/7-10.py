@@ -13,12 +13,12 @@ def dfs(x, y):
         cnt += 1
     else:
         for i in range(4):
-            a = x + dx[i]
-            b = y + dy[i]
-            if 0 <= a < 7 and 0 <= b < 7 and miro[a][b] == 0:
-                miro[a][b] = 1
-                dfs(a, b)
-                miro[a][b] = 0
+            xx = x + dx[i]
+            yy = y + dy[i]
+            if 0 <= xx < 7 and 0 <= yy < 7 and miro[xx][yy] == 0:
+                miro[xx][yy] = 1
+                dfs(xx, yy)
+                miro[xx][yy] = 0
 
 if __name__=="__main__":
     miro = [list(map(int, input().split())) for _ in range(7)]
