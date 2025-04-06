@@ -49,9 +49,5 @@ if __name__=="__main__":
     ch[si][se] = 1
     dfs(si, se)
     print(cnt)
-    
-    
-        
-    
             
     
