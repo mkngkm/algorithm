@@ -15,9 +15,6 @@ def Qsort(lt, rt):
         Qsort(lt, pos-1)
         Qsort(pos+1, rt)
 
-
-
-
 if __name__=="__main__":
     arr = [45, 21, 23, 36, 15, 67, 11, 60, 20, 33]
     print('Before sort:', end=" ")
