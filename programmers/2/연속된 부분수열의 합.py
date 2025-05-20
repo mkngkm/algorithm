@@ -1,6 +1,5 @@
 # 연속된 부분 수열의 합
 
-
 # 기존 수열에서 임의의 두 인덱스의 원소와 그 사이의 원소를 모두 포함하는 부분 수열이어야 합니다. (연속)
 # 부분 수열의 합은 k입니다.
 # 합이 k인 부분 수열이 여러 개인 경우 길이가 짧은 수열을 찾습니다.
@@ -12,8 +11,6 @@ def solution(sequence, k):
     max_sum = 0
     end = 0
     interval = n
-    
-    
     for start in range(n): # (인덱스 순서 대로니까 자동 정렬)
         while max_sum < k and end < n: # 작을때까지만 더함 
             max_sum += sequence[end]
@@ -22,11 +19,7 @@ def solution(sequence, k):
             res = [start, end-1]
             interval = end-1-start
         max_sum -= sequence[start] # max_sum 에서 start 가 움직여야 앞의 while문의 end가 늘어날 수 있음
-
-    
-   
     return res
-
 
 if __name__=="__main__":
     seq =  [1, 2, 3, 4, 5]
